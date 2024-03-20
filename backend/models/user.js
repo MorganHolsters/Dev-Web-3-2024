@@ -12,7 +12,6 @@ module.exports = class User {
     }
 
     static save(user){
-        console.log("2");
         return db.execute(
             'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
             [user.name, user.email, user.password]
