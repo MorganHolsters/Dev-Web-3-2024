@@ -2,5 +2,5 @@
     "host": "localhost",
     "user": "root",
     "database": "posts",
-    "password": "root123"
+    "password": "<tonMotDePasse>"
 }
