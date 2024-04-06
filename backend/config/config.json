@@ -1,6 +1,6 @@
 {
     "host": "localhost",
-    "user": "root",
-    "database": "posts",
-    "password": "root123"
+    "user": ">TonNomDUtilisateur>",
+    "database": "<TonNomDeDB>",
+    "password": "<TonMotDePasse>"
 }
