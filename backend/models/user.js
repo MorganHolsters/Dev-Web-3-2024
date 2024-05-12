@@ -12,8 +12,9 @@ module.exports = class User {
     }
 
     static save(user){
+        
         return db.execute(
-            'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
+            'INSERT INTO cheval.User (name, email, password) VALUES (?, ?, ?)',
             [user.name, user.email, user.password]
         );
     }

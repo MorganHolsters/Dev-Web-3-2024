@@ -1,6 +1,6 @@
 {
     "host": "localhost",
-    "user": ">TonNomDUtilisateur>",
-    "database": "<TonNomDeDB>",
-    "password": "<TonMotDePasse>"
+    "user": "cirano",
+    "database": "cheval",
+    "password": "NePSiHK1"
 }
