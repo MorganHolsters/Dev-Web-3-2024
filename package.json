@@ -8,7 +8,7 @@
     "frontend": "cd frontend && npm start",
     "backend": "cd backend && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\"",
-    "heroku-postbuild": "cd frontend && npm install && npm run start"
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
