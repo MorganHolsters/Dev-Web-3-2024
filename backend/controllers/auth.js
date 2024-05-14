@@ -73,3 +73,15 @@ exports.login = async(req, res, next) => {
         next(err);
     }
 };
+
+exports.logout = async(req, res) => {
+    try {
+        res.cookie("token", '', {maxAge : 1});
+        res.status(200).json({ message: 'logged out' });
+    } catch (err) {
+        if (!err.statusCode){
+            err.statusCode = 500;
+        }
+        next(err);
+    }
+};
