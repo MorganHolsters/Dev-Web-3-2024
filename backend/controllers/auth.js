@@ -37,15 +37,15 @@ exports.login = async(req, res, next) => {
     try{
         const user = await User.find(email);
 
-        if(user[0].length !== 1){
+        if(user.length !== 1){
             const error = new Error('Aucun utilisateur avec cette adresse enregistré')
             error.statusCode = 401;
             throw error;
         }
 
-        const storedUser = user[0][0];
+        const storedUser = user[0];
 
-        const isEqual = await bcrypt.compare(password, storedUser.password);
+        const isEqual = await bcrypt.compare(password, storedUser.hash);
 
         if(!isEqual) {
             const error = new Error('Mot de passe incorrect');
@@ -54,14 +54,17 @@ exports.login = async(req, res, next) => {
         }
 
         const token = jwt.sign({
-            email: storedUser.email,
-            userId: storedUser.id
+            email: storedUser.mail,
+            userId: storedUser.idUser
         },
         'secretfortoken',
         { expiresIn: '1h'}
         );
 
-        res.status(200).json({ token: token, userId: storedUser.id});
+        res.cookie("token", token, {
+            httpOnly: true
+        });
+        res.status(200).json({ token: token, userId: storedUser.idUser});
 
     } catch (err) {
         if (!err.statusCode){

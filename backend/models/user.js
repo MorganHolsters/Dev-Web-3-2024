@@ -8,13 +8,13 @@ module.exports = class User {
     }
 
     static find(email){
-        return db.execute('SELECT * FROM users WHERE email = ?', [email]);
+        return db.execute('SELECT * FROM cheval.User WHERE mail = ?', [email]);
     }
 
     static save(user){
         
         return db.execute(
-            'INSERT INTO cheval.User (name, email, password) VALUES (?, ?, ?)',
+            'INSERT INTO cheval.User (name, mail, hash) VALUES (?, ?, ?)',
             [user.name, user.email, user.password]
         );
     }
