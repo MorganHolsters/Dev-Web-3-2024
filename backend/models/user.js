@@ -14,9 +14,17 @@ module.exports = class User {
     static save(user){
         
         return db.execute(
-            'INSERT INTO cheval.User (name, mail, hash) VALUES (?, ?, ?)',
+            'INSERT INTO cheval.User (userName, mail, hash) VALUES (?, ?, ?)',
             [user.name, user.email, user.password]
         );
     }
+
+    static isAdmin(id){
+        const administrator =  db.execute(
+            'SELECT isAdmin FROM cheval.User WHERE idUser = ?', [id]
+        );
+        return administrator;
+    }
 };
+
 

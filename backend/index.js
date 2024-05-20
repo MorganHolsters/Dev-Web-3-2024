@@ -1,16 +1,19 @@
 const express = require('express');
 
 const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser");
 
 const authRoutes = require('./routes/auth');
-const postsRoutes = require('./routes/posts');
-const badgeRoutes = require('./routes/badges');
-const usersRoutes = require('./routes/users');
+const userRoutes = require('./routes/user');
+const adminRoutes = require('./routes/admin')
 const authMiddleware = require('./middleware/auth');
+const adminMiddleware = require('./middleware/admin');
 
 const errorController = require('./controllers/error');
 
 const app = express();
+
+app.use(cookieParser());
 
 const cors = require('cors'); 
 
@@ -28,9 +31,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRoutes);
-app.use('/post', postsRoutes);
-app.use('/badges', badgeRoutes);
-app.use('/users',authMiddleware, usersRoutes);
+app.use('/user',authMiddleware, userRoutes);
+app.use('/admin', adminMiddleware, adminRoutes);
 
 app.use(errorController.get404);
 

@@ -55,7 +55,8 @@ exports.login = async(req, res, next) => {
 
         const token = jwt.sign({
             email: storedUser.mail,
-            userId: storedUser.idUser
+            userId: storedUser.idUser,
+            isAdmin: storedUser.isAdmin
         },
         'secretfortoken',
         { expiresIn: '1h'}
@@ -64,7 +65,7 @@ exports.login = async(req, res, next) => {
         res.cookie("token", token, {
             httpOnly: true
         });
-        res.status(200).json({ token: token, userId: storedUser.idUser});
+        res.status(200).json({ token: token, userId: storedUser.idUser, admin: storedUser.isAdmin});
 
     } catch (err) {
         if (!err.statusCode){
