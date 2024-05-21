@@ -11,6 +11,10 @@ module.exports = class User {
         return db.execute('SELECT * FROM cheval.User WHERE mail = ?', [email]);
     }
 
+    static getUserByUsername(username){
+        return db.execute('SELECT * FROM cheval.User WHERE userName = ?', [username]);
+    }
+
     static save(user){
         
         return db.execute(

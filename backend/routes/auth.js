@@ -28,7 +28,7 @@ router.post(
             const user = await User.find(email);
             if(user.length > 0){
                 console.log("Addresse email déjà utilisée");
-                //promise.reject doesn't answer the querry i don't know how to fix that
+                //promise.reject doesn't answer the querry i don't know how to fix it
                 return Promise.reject('Adresse email déjà utilisée')
             }
         })
