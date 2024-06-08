@@ -22,14 +22,12 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "strictPropertyInitialization" : false
+    ]
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": false
+    "strictTemplates": true
   }
 }
