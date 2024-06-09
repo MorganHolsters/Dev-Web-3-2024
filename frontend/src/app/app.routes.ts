@@ -10,7 +10,7 @@ export const routes: Routes = [
         title: 'App Home Page',
     },
     {
-        path: '/user',
+        path: 'user',
         component: UserComponent,
         title: 'App User Page',
     },

@@ -1,0 +1,34 @@
+<nav class="navbar is-white">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="../assets/favicon_cheval/android-chrome-512x512.png" alt="cheval logo" class="py-2 px-2" style="max-height: 70px;">
+      </a>
+      <a class="navbar-burger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+  
+    <div id="nav-links" class="navbar-menu">
+      <div class="navbar-start">
+        <a routerLink="/" class="navbar-item">Home</a>
+        <a routerLink="/about" class="navbar-item">About</a>
+        <a routerLink="/user" class="navbar-item" *ngIf="user$ | async as user">User</a>
+        <a routerLink="/planning" class="navbar-item" *ngIf="user$ | async as user">Planning</a>
+        <a routerLink="/admin" class="navbar-item" *ngIf="admin$ | async as admin">Admin</a>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" (click)="test()" *ngIf="!(user$ | async)">Sign up test</a>
+            <a class="button is-light" *ngIf="!(user$ | async)">Log in</a>
+            <a class="button is-light" *ngIf="user$ | async as user">Log off</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+

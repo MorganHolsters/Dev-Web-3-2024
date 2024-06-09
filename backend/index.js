@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRoutes);
-app.use('/user',authMiddleware, userRoutes);
+app.use('/user', authMiddleware, userRoutes);
 app.use('/admin', adminMiddleware, adminRoutes);
 
 app.use(errorController.get404);

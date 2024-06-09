@@ -5,7 +5,7 @@ const adminController = require('../controllers/admin');
 const router = express.Router();
 
 router.get('/',(req, res) => {
-    res.send("admin");
+    res.json("admin");
 });
 
 //router.get('/info/user/:username', adminController);
