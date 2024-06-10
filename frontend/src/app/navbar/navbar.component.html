@@ -1,6 +1,6 @@
 <nav class="navbar is-white">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item" routerLink="/">
         <img src="../assets/favicon_cheval/android-chrome-512x512.png" alt="cheval logo" class="py-2 px-2" style="max-height: 70px;">
       </a>
       <a class="navbar-burger" (click)="toggleMenu()">
@@ -23,7 +23,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary" (click)="test()" *ngIf="!(user$ | async)">Sign up test</a>
+            <a class="button is-primary" *ngIf="!(user$ | async)">Sign up test</a>
             <a class="button is-light" *ngIf="!(user$ | async)">Log in</a>
             <a class="button is-light" *ngIf="user$ | async as user">Log off</a>
           </div>

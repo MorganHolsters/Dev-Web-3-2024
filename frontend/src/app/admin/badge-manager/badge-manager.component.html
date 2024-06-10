@@ -1,0 +1,17 @@
+<div class="box">
+    <div class="grid">
+        @for (badge of badges; track badge.id) {
+            <div class="cell">
+                <div class="box is-hoverable is-light">
+                    <img src="{{badge.icon}}" alt="badge icon">
+                    <p>{{ badge.name }}</p>
+                </div>
+            </div>
+        }
+        <div class="cell is-grey is-hoverable">
+            <div class="box is-hoverable">
+                <img src="../../../assets/badge_icons/new_badge.png" alt="create new badge">
+            </div>
+        </div>
+    </div>
+</div>

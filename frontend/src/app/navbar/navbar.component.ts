@@ -33,8 +33,4 @@ export class NavbarComponent {
 
     navbarMenu?.classList.toggle('is-active')
   }
-
-  test(){
-    console.log(this.user$);
-  }
 }

@@ -1,0 +1,15 @@
+<div class="box">  
+    <table class="table is-fullwidth is-primary is-hoverable">
+        <tbody>
+            @for (user of users; track user.id) {
+                <tr>
+                    <th>{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td><button class="button">modify badges</button></td>
+                    <td><button class="button">view planning</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,36 @@
+<section class="hero">
+    <div class="hero-body">
+        <p class="title">Admin Page</p>
+    </div>
+</section>
+<section>
+    <div class="fixed-grid has-1-cols">
+        <div class="grid">
+            <button (click)="openModal('user-modal')" class="js-modal-trigger button cell">Manage User</button>
+            <button (click)="openModal('planning-modal')" class="button cell">Manage Planning</button>
+            <button (click)="openModal('badges-modal')" class="button cell">Manage Badges</button>
+        </div>
+    </div>
+</section>
+
+<div class="modal" id="user-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <app-user-manager></app-user-manager>
+    </div>
+    <button (click)="closeModal('user-modal')" class="modal-close is-large" aria-label="close"></button>
+</div>
+<div class="modal" id="planning-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <app-planning-manager></app-planning-manager>
+    </div>
+    <button (click)="closeModal('planning-modal')" class="modal-close is-large" aria-label="close"></button>
+</div>
+<div class="modal" id="badges-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <app-badge-manager></app-badge-manager>
+    </div>
+    <button (click)="closeModal('badges-modal')" class="modal-close is-large" aria-label="close"></button>
+</div>
