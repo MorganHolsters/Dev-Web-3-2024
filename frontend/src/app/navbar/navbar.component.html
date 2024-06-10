@@ -23,12 +23,30 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary" *ngIf="!(user$ | async)">Sign up test</a>
-            <a class="button is-light" *ngIf="!(user$ | async)">Log in</a>
+            <a (click)="signupForm()" class="button is-primary" *ngIf="!(user$ | async)">Sign up</a>
+            <a (click)="loginForm()" class="button is-light" *ngIf="!(user$ | async)">Log in</a>
             <a (click)="logoff()" class=" button is-light" *ngIf="user$ | async as user">Log off</a>
           </div>
         </div>
       </div>
     </div>
   </nav>
+
+  <div id="login-form" class="modal">
+    <div class="modal-background">
+      <div class="modal-content">
+        <app-login-form></app-login-form>
+      </div>  
+    </div>
+    <button (click)="loginForm()" class="modal-close is-large"></button>
+  </div>
+
+  <div id="signup-form" class="modal">
+    <div class="modal-background">
+        <div class="modal-content">
+          <app-signup-form></app-signup-form>
+        </div>
+    </div>
+    <button (click)="signupForm()" class="modal-close is-large"></button>
+  </div>
 

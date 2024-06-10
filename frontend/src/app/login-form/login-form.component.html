@@ -1,0 +1,13 @@
+<div class="section">
+  <div class="box">
+    <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+      <label class="label">email
+        <input class="input" formControlName="email" type="email" />
+      </label>
+      <label class="label">password
+        <input class="input" formControlName="password" type="password" />
+      </label>
+      <button class="button" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
