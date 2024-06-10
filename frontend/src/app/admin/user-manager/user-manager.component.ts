@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-user-manager',
@@ -15,4 +17,15 @@ export class UserManagerComponent {
   }, {
     id: '3', name: 'jeff', email: 'killmeplease@gmx.com'
   }];
+
+  users$!: Observable<unknown>;
+
+  constructor(
+    private adminService: AdminService     
+  ){}
+
+  ngOnInit(): void {
+    this.users$ = this.adminService.getAdmin()
+  }
+
 }

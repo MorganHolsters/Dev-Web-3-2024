@@ -12,6 +12,11 @@ export class AdminService {
   getAdmin(): Observable<boolean> {
     return this.http.get<boolean>(`http://localhost:3000/admin/`);
   }
+
+  getUsers(): Observable<unknown>{
+    return this.http.get<unknown>('')
+  }
+
 }
 
 

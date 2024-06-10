@@ -25,7 +25,7 @@
           <div class="buttons">
             <a class="button is-primary" *ngIf="!(user$ | async)">Sign up test</a>
             <a class="button is-light" *ngIf="!(user$ | async)">Log in</a>
-            <a class="button is-light" *ngIf="user$ | async as user">Log off</a>
+            <a (click)="logoff()" class=" button is-light" *ngIf="user$ | async as user">Log off</a>
           </div>
         </div>
       </div>

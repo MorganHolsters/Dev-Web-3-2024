@@ -5,6 +5,7 @@ import { AdminService } from '../services/admin.service';
 import { Observable } from 'rxjs';
 import { NgIf } from '@angular/common';
 import { AsyncPipe } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -20,12 +21,17 @@ export class NavbarComponent {
 
   constructor(
     private adminService: AdminService,
-    private userService: UserService,      
+    private userService: UserService,
+    private authService: AuthService,      
   ){}
 
   ngOnInit(): void {
     this.user$ = this.userService.getUser()
     this.admin$ = this.adminService.getAdmin()
+  }
+
+  logoff(){
+    return this.authService.logoff()
   }
 
   toggleMenu() {
