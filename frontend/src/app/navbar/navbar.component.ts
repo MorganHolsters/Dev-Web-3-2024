@@ -34,6 +34,8 @@ export class NavbarComponent {
     return this.authService.logoff()
   }
 
+  
+
   toggleMenu() {
     const navbarMenu = document.querySelector("#nav-links");
 
